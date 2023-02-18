@@ -1,3 +1,8 @@
 package de.htwberlin.core.domain.service;
 
-public interface ICheckoutService {}
+import de.htwberlin.core.domain.model.CheckoutItem;
+import java.util.List;
+
+public interface ICheckoutService {
+  List<CheckoutItem> saveCheckoutItem(List<CheckoutItem> checkoutItem);
+}
