@@ -1,0 +1,21 @@
+version: '3.5'
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:14.5-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    container_name: postgres-checkout
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=AWTAP0NOm0v6KNACjIf5E7UK
+      - POSTGRES_DB=checkout_db
+    ports:
+      - '5435:5435'
+    expose:
+      - '5435'
+    command: -p 5435
