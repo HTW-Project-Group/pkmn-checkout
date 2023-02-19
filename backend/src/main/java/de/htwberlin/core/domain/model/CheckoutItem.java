@@ -13,11 +13,26 @@ import org.hibernate.annotations.GenericGenerator;
 @AllArgsConstructor
 @Entity
 @Table(name = "checkout")
-public class Checkout implements Serializable {
+public class CheckoutItem implements Serializable {
 
   @Id
   @GeneratedValue(generator = "UUID")
   @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
   @Column(name = "id", nullable = false, updatable = false)
   UUID id;
+
+  @Column(name = "user_id", nullable = false, updatable = false)
+  UUID userId;
+
+  @Column(name = "pokemon_id", nullable = false, updatable = false)
+  String pokemonId;
+
+  @Column(name = "name")
+  String name;
+
+  @Column(name = "quantity")
+  int quantity;
+
+  @Column(name = "price")
+  double price;
 }

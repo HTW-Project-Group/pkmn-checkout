@@ -1,6 +1,8 @@
 package de.htwberlin.port.checkout;
 
+import de.htwberlin.core.domain.model.CheckoutItem;
 import de.htwberlin.core.domain.service.ICheckoutService;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,4 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class CheckoutController {
 
   private final ICheckoutService checkoutService;
+
+  @GetMapping("/save")
+  public void saveCheckoutItem(List<CheckoutItem> checkoutItem) {
+    checkoutService.saveCheckoutItem(checkoutItem);
+  }
 }
