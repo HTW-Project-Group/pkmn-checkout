@@ -21,10 +21,10 @@ public class CheckoutItem implements Serializable {
   @Column(name = "id", nullable = false, updatable = false)
   UUID id;
 
-  @Column(name = "user_id", unique = true, nullable = false, updatable = false)
+  @Column(name = "user_id", nullable = false, updatable = false)
   UUID userId;
 
-  @Column(name = "pokemon_id", unique = true, nullable = false, updatable = false)
+  @Column(name = "pokemon_id", nullable = false, updatable = false)
   String pokemonId;
 
   @Column(name = "name")
@@ -35,8 +35,4 @@ public class CheckoutItem implements Serializable {
 
   @Column(name = "price")
   double price;
-
-  // user id + basket von rabbitmq muss man mappen, checkoutitem oder invoice (preis, produktids,
-  // quantity, name)
-  // controller save/make invoice-> liste an checkoutitems
 }
