@@ -1,3 +1,3 @@
-# PKMN-Basket-Domain
+# PKMN-Checkout-Domain
 
-Domain where the user can view the basket and process it to the payment-domain.
+Domain where the user can view and pay the order.
