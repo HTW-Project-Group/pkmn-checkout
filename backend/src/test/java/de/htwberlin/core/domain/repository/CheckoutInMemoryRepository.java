@@ -22,6 +22,19 @@ public class CheckoutInMemoryRepository extends BaseInMemoryRepository<CheckoutI
   }
 
   @Override
+  public void deleteAllCheckoutItemsByUserId(UUID userId) {
+    entities
+        .keySet()
+        .forEach(
+            (key) -> {
+              final var entity = entities.get(key);
+              if (entity.getUserId().equals(userId)) {
+                entities.remove(key);
+              }
+            });
+  }
+
+  @Override
   public List<CheckoutItem> findAll() {
     return entities.values().stream().toList();
   }

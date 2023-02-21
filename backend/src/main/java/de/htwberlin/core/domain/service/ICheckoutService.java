@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ICheckoutService {
-  void saveCheckoutItem(List<CheckoutItem> checkoutItem);
+  void saveCheckoutItem(List<CheckoutItem> checkoutItems);
 
   List<CheckoutItem> getAllCheckoutItemsByUserId(UUID id);
 }

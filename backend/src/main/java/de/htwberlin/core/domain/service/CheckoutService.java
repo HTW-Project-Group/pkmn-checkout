@@ -18,8 +18,13 @@ public class CheckoutService implements ICheckoutService {
   private final ICheckoutRepository checkoutRepository;
 
   @Override
-  public void saveCheckoutItem(List<CheckoutItem> checkoutItem) {
-    checkoutRepository.saveAll(checkoutItem);
+  public void saveCheckoutItem(List<CheckoutItem> checkoutItems) {
+    checkoutItems.stream()
+        .map(CheckoutItem::getUserId)
+        .distinct()
+        .findFirst()
+        .ifPresent(checkoutRepository::deleteAllCheckoutItemsByUserId);
+    checkoutRepository.saveAll(checkoutItems);
   }
 
   @Override
