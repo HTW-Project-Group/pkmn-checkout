@@ -24,12 +24,6 @@ public class CheckoutItem implements Serializable {
   @Column(name = "user_id", nullable = false, updatable = false)
   UUID userId;
 
-  @Column(name = "pokemon_id", nullable = false, updatable = false)
-  String pokemonId;
-
-  @Column(name = "name")
-  String name;
-
   @Column(name = "quantity")
   int quantity;
 

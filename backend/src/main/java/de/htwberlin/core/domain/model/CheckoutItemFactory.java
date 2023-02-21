@@ -14,9 +14,7 @@ public class CheckoutItemFactory {
     return CheckoutItem.builder()
         .id(id)
         .userId(UUID.randomUUID())
-        .name(faker.pokemon().name())
         .price(faker.number().randomDouble(2, 100, 1000))
-        .quantity(faker.random().nextInt(1, 10))
-        .pokemonId("P" + faker.pokemon().hashCode());
+        .quantity(faker.random().nextInt(1, 10));
   }
 }
